@@ -21,18 +21,19 @@ pipeline {
                 
             }
         }
-        stage('Test') {
-            steps {
-            
-                        echo 'Running Tests'
-                        sh 'npm run test'
-            } 
-        }
          stage('Build') {
             steps {
-            
-                        echo 'Running Builds'
+              parallel(
+                'build':{
+                     echo 'Running Builds'
                         sh 'npm run build'
+                },
+                'test':{
+                    echo 'Running Tests'
+                        sh 'npm test a'
+                }
+              )
+            
             } 
         }
         
