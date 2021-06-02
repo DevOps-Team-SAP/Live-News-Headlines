@@ -30,7 +30,7 @@ pipeline {
                 },
                 'test':{
                     echo 'Running Tests'
-                        sh 'npm test a'
+                        // sh 'npm test a'
                 }
               )
             
