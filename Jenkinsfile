@@ -21,20 +21,21 @@ pipeline {
                 
             }
         }
-         stage('Build & Test') {
+        stage('Test') {
             steps {
-                 parallel (
-                     'build':{
-                        echo 'Running Builds'
-                        sh 'npm run build'
-                     },
-                     'test':{
-                        echo 'Running Tests...'
+            
+                        echo 'Running Tests'
                         sh 'npm run test'
-                     }
-                 )
             } 
         }
+         stage('Build') {
+            steps {
+            
+                        echo 'Running Builds'
+                        sh 'npm run build'
+            } 
+        }
+        
         stage('Deploy Image') {
                 steps {
                        script { 
