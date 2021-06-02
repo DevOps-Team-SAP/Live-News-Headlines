@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News Daily</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style>
+        .fixed-content {
+    top: 0;
+    bottom:0;
+    right: 0;
+    padding-top: 70px;
+    position:fixed;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+@media (max-width: 767px) {
+    .fixed-content {
+        position: static;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="/app/bundle.js"></script>
+</body>
+</html>
