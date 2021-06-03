@@ -64,7 +64,8 @@ pipeline {
                   // sh 'ls'
                   // sh 'cp Ec2/jenkins_mohith.pem .'
                   sh 'chmod 400 jenkins_mohith.pem'
-                  sh 'ssh -i "jenkins_mohith.pem" -o StrictHostKeyChecking=no ec2-54-164-159-239.compute-1.amazonaws.com -yes'
+                  sh "ssh -o StrictHostKeyChecking=no ec2-user@54-164-159-239 'echo Hello'"
+                  // sh 'ssh -i "jenkins_mohith.pem" -o StrictHostKeyChecking=no ec2-54-164-159-239.compute-1.amazonaws.com -yes'
                   sh "docker pull $registry:$BUILD_NUMBER" 
                   sh 'logout'          
             }
