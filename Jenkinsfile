@@ -90,8 +90,6 @@ pipeline {
                     notFailBuild: true,
                     patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
                                [pattern: '.propsfile', type: 'EXCLUDE']])
-            sh 'ls'
-            sh 'ls -l'
         }
   }
     
