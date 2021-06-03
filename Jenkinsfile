@@ -56,11 +56,13 @@ pipeline {
             steps {
                      
                   echo 'Server Starting...'
+                  sh 'rm -r Ec2'
                   sh 'git clone https://github.com/Mohithraj916/Ec2.git'
                   sh 'cd Ec2'
                   sh 'ls'
                   sh 'ssh -i "jenkins_mohith.pem" ec2-user@ec2-100-25-151-71.compute-1.amazonaws.com -yes'
-                  sh "docker pull $registry:$BUILD_NUMBER"           
+                  sh "docker pull $registry:$BUILD_NUMBER" 
+                  sh 'exit'          
             }
         }
     }
