@@ -56,6 +56,7 @@ pipeline {
             steps {
                      
                   echo 'Server Starting...'
+                  sh 'sudo su'
                   sh 'rm -rf Ec2'
                   sh 'whoami'
                   sh 'git clone https://github.com/Mohithraj916/Ec2.git'
