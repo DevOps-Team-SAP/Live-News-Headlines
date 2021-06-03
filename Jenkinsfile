@@ -58,7 +58,7 @@ pipeline {
                   echo 'Server Starting...'
                   sh 'git clone https://github.com/Mohithraj916/Ec2.git'
                   sh 'cd Ec2'
-                  sh 'chmod 400 jenkins_mohith.pem'
+                  sh 'ls'
                   sh 'ssh -i "jenkins_mohith.pem" ec2-user@ec2-100-25-151-71.compute-1.amazonaws.com -yes'
                   sh "docker pull $registry:$BUILD_NUMBER"           
             }
@@ -92,6 +92,8 @@ pipeline {
                     notFailBuild: true,
                     patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
                                [pattern: '.propsfile', type: 'EXCLUDE']])
+            sh 'ls'
+            sh 'ls -l'
         }
   }
     
