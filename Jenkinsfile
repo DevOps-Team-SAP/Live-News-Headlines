@@ -56,7 +56,7 @@ pipeline {
             steps {
                      
                   echo 'Server Starting...'
-                  sh 'rm -r Ec2'
+                  //sh 'rm -r Ec2'
                   sh 'whoami'
                   sh 'git clone https://github.com/Mohithraj916/Ec2.git'
                   sh 'cp Ec2/jenkins_mohith.pem .'
