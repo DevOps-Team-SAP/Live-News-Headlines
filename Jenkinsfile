@@ -56,16 +56,8 @@ pipeline {
             steps {
                      
                   echo 'Server Starting...'
-                  sh 'ls'
-                  // sh 'rm -rf Ec2'
-                  // sh 'whoami'
-                  // sh 'git clone https://github.com/Mohithraj916/Ec2.git'
-                  // sh 'cd Ec2'
-                  // sh 'ls'
-                  // sh 'cp Ec2/jenkins_mohith.pem .'
                   sh 'chmod 400 jenkins_mohith.pem'
-                  sh "ssh -i 'jenkins_mohith.pem' -o StrictHostKeyChecking=no ec2-user@ec2-100-26-216-191.compute-1.amazonaws.com 'docker pull $registry:$BUILD_NUMBER'"
-                  // sh 'ssh -i "jenkins_mohith.pem" -o StrictHostKeyChecking=no ec2-54-164-159-239.compute-1.amazonaws.com -yes'
+                  sh "ssh -i 'jenkins_mohith.pem' -o StrictHostKeyChecking=no ec2-user@ec2-100-26-216-191.compute-1.amazonaws.com './deploy.sh $registry:$BUILD_NUMBER'"
                          
             }
         }
