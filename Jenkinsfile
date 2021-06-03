@@ -60,7 +60,7 @@ pipeline {
                   sh 'git clone https://github.com/Mohithraj916/Ec2.git'
                   sh 'cp Ec2/jenkins_mohith.pem .'
                   sh 'ls'
-                  sh 'sudo chmod 400 jenkins_mohith.pem'
+                  sh 'chmod 400 jenkins_mohith.pem'
                   sh 'ssh -i "jenkins_mohith.pem" ec2-user@ec2-100-25-151-71.compute-1.amazonaws.com -yes'
                   sh "docker pull $registry:$BUILD_NUMBER" 
                   sh 'logout'          
